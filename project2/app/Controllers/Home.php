@@ -6,6 +6,6 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('v_portfolio'); # mengarahkan ke file v_portfolio.php yang ada di folder Views
+        return view('v_home'); # mengarahkan ke file v_home.php yang ada di folder Views
     }
 }
