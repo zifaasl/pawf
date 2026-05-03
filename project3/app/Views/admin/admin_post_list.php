@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyBlog</title>
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    
+    <!-- TAMBAHAN: DataTables CSS saja (tanpa FontAwesome) -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css" />
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -50,10 +54,11 @@
     </div>
 
     <div class="container">
-        <table class="table">
+        <!-- TAMBAHAN: id="tabelData" agar fitur DataTables berjalan -->
+        <table id="tabelData" class="table">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>No.</th>
                     <th>Title</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -75,6 +80,7 @@
                         <?php endif ?>
                     </td>
                     <td>
+                        <!-- Dikembalikan ke warna asli bawaan kodinganmu -->
                         <a href="<?= base_url('admin/post/'.$post['id'].'/preview') ?>"
                            class="btn btn-sm btn-outline-secondary" target="_blank">Preview</a>
                         <a href="<?= base_url('admin/post/'.$post['id'].'/edit') ?>"
@@ -89,7 +95,7 @@
             </tbody>
         </table>
 
-        <!-- Modal Konfirmasi Delete -->
+        <!-- Modal Konfirmasi Delete (Struktur Asli) -->
         <div id="confirm-dialog" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -128,9 +134,41 @@
         </footer>
     </div>
 
-    <!-- jQuery dan Bootstrap JS -->
-    <script src="<?= base_url('js/jquery.min.js') ?>"></script>
+    <!-- ======================================================= -->
+    <!-- JAVASCRIPT: DataTables & SweetAlert2 -->
+    <!-- ======================================================= -->
+    
+    <!-- 1. Panggil jQuery dari CDN (Wajib pertama agar DataTables jalan) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- 2. Bootstrap JS (File lokal milikmu) -->
     <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
+
+    <!-- 3. DataTables JS -->
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    
+    <!-- 4. SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Script Inisialisasi DataTables -->
+    <script>
+        $(document).ready(function() {
+            $('#tabelData').DataTable(); 
+        });
+    </script>
+
+    <!-- Script SweetAlert2 untuk Flashdata -->
+    <?php if (session()->getFlashdata('pesan')) : ?>
+        <script>
+            Swal.fire({
+                title: "Berhasil!",
+                text: "<?= session()->getFlashdata('pesan'); ?>",
+                icon: "success",
+                timer: 2500,
+                showConfirmButton: false
+            });
+        </script>
+    <?php endif; ?>
 
 </body>
 </html>
