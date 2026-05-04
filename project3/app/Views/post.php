@@ -36,7 +36,7 @@
     <?= $this->include('layouts/navbar'); ?>
 
     <!-- Banner Blog -->
-    <div class="p-5 mb-5 text-white shadow-sm text-center" style="background: linear-gradient(135deg, #0d6efd, #0dcaf0);">
+    <div class="p-5 mb-5 text-white shadow-sm text-center" style="background: linear-gradient(135deg, #000000, #313839);">
       <div class="container py-5">
         <h1 class="display-4 fw-bold">Daftar Artikel</h1>
         <p class="col-md-8 fs-4 mx-auto mt-3">Kumpulan tulisan, tutorial, dan update terbaru dari kami.</p>
@@ -91,5 +91,4 @@
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 
 </body>
-
 </html>

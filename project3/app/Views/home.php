@@ -26,8 +26,8 @@
     <!-- Memanggil Navbar -->
     <?= $this->include('layouts/navbar'); ?>
 
-    <!-- Banner (Hero Section) dibuat lebih berwarna dengan gradasi dan teks di tengah -->
-    <div class="p-5 mb-5 text-white shadow-sm" style="background: linear-gradient(135deg, #0d6efd, #0dcaf0);">
+    <!-- Banner (Hero Section) -->
+    <div class="p-5 mb-5 text-white shadow-sm" style="background: linear-gradient(135deg, #000000, #313839);">
       <div class="container py-5 text-center">
         <h1 class="display-4 fw-bold">Selamat Datang di MyBlog</h1>
         <p class="col-md-8 fs-4 mx-auto mt-3">Tempat berbagi cerita, pengalaman, dan pengetahuan dunia programming.</p>
@@ -100,16 +100,10 @@
         </footer>
     </div>
 
-    <!-- Tombol Back to Top yang melayang di pojok kanan bawah -->
-    <a href="#" class="position-fixed bottom-0 end-0 m-4 bg-primary text-white rounded-circle shadow d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; text-decoration: none; z-index: 999;">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-
     <!-- Jquery dan Bootsrap JS -->
     <!-- Menambahkan fallback jQuery CDN agar terbaca -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 
 </body>
-
 </html>

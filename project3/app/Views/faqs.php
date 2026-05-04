@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
     
-    <!-- TAMBAHAN: CSS untuk efek hover pada kartu pertanyaan -->
+    <!-- CSS untuk efek hover -->
     <style>
         .custom-card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -28,11 +28,11 @@
 
 <body>
 
-    <!-- Struktur Asli: Memanggil Navbar -->
+    <!-- Memanggil Navbar -->
     <?= $this->include('layouts/navbar'); ?>
 
-    <!-- MODIFIKASI: Banner FAQ dengan warna biru yang sama dengan Home -->
-    <div class="p-5 mb-5 text-white shadow-sm text-center" style="background: linear-gradient(135deg, #0d6efd, #0dcaf0);">
+    <!-- Banner FAQ -->
+    <div class="p-5 mb-5 text-white shadow-sm text-center" style="background: linear-gradient(135deg, #000000, #313839);">
       <div class="container py-5">
         <h1 class="display-4 fw-bold">FAQ</h1>
         <p class="col-md-8 fs-4 mx-auto mt-3">Pertanyaan yang Sering Diajukan</p>
@@ -40,7 +40,6 @@
     </div>
 
     <div class="container">
-        <!-- Struktur Asli: Baris tetap menggunakan col-md-12 karena cocok untuk FAQ -->
         <div class="row">
             
             <!-- KARTU FAQ 1 -->
@@ -76,7 +75,7 @@
         </div>
     </div>
 
-    <!-- Struktur Asli: Footer -->
+    <!-- Footer -->
     <div class="container py-4">
         <footer class="pt-3 mt-4 text-muted border-top text-center">
             <div class="container">
@@ -85,7 +84,7 @@
         </footer>
     </div>
 
-    <!-- Struktur Asli: Jquery dan Bootsrap JS -->
+    <!-- Jquery dan Bootsrap JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 
