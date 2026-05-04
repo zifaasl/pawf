@@ -1,19 +1,36 @@
-# CodeIgniter 4 Application Starter
+# MyBlog - Project Aplikasi Web
 
-## What is CodeIgniter?
+Aplikasi blog yang dikembangkan menggunakan framework CodeIgniter 4. Aplikasi ini dilengkapi dengan fitur manajemen artikel, profil, kontak, dan dasbor admin.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 📸 Tampilan Aplikasi
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+**1. Halaman Utama (Home)**
+![Halaman Home](ss-home.png)
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+**2. Halaman Daftar Artikel (Blog)**
+![Halaman Blog](ss-blog.png)
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+**3. Halaman Dasbor Admin**
+![Halaman Admin](ss-admin.png)
 
+**4. Halaman Login**
+![Halaman Login](ss-login.png)
+
+**5. Halaman About & FAQ**
+![Halaman About](ss-about.png)
+![Halaman FAQ](ss-faq.png)
+
+**6. Halaman Contact**
+![Halaman Contact](ss-contact.png)
+
+---
+
+## 🚀 Fitur Utama
+- Sistem Autentikasi (Login/Logout)
+- CRUD (Create, Read, Update, Delete) Artikel Blog
+- Tampilan antarmuka yang bersih dan responsif
+
+---
 ## Installation & updates
 
 `composer create-project codeigniter4/appstarter` then `composer update` whenever
