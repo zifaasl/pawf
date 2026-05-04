@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
     
-    <!-- TAMBAHAN: DataTables CSS saja (tanpa FontAwesome) -->
+    <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css" />
 </head>
 <body>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="container">
-        <!-- TAMBAHAN: id="tabelData" agar fitur DataTables berjalan -->
+        <!-- id="tabelData" agar fitur DataTables berjalan -->
         <table id="tabelData" class="table">
             <thead>
                 <tr>
@@ -80,7 +80,6 @@
                         <?php endif ?>
                     </td>
                     <td>
-                        <!-- Dikembalikan ke warna asli bawaan kodinganmu -->
                         <a href="<?= base_url('admin/post/'.$post['id'].'/preview') ?>"
                            class="btn btn-sm btn-outline-secondary" target="_blank">Preview</a>
                         <a href="<?= base_url('admin/post/'.$post['id'].'/edit') ?>"
@@ -95,7 +94,7 @@
             </tbody>
         </table>
 
-        <!-- Modal Konfirmasi Delete (Struktur Asli) -->
+        <!-- Modal Konfirmasi Delete -->
         <div id="confirm-dialog" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -134,21 +133,15 @@
         </footer>
     </div>
 
-    <!-- ======================================================= -->
-    <!-- JAVASCRIPT: DataTables & SweetAlert2 -->
-    <!-- ======================================================= -->
-    
-    <!-- 1. Panggil jQuery dari CDN (Wajib pertama agar DataTables jalan) -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- DataTables & SweetAlert2 -->
 
-    <!-- 2. Bootstrap JS (File lokal milikmu) -->
-    <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- Panggil jQuery dari CDN (Wajib pertama agar DataTables jalan) -->
 
-    <!-- 3. DataTables JS -->
-    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script> <!-- Bootstrap JS -->
+
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script> <!-- DataTables JS -->
     
-    <!-- 4. SweetAlert2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 JS -->
 
     <!-- Script Inisialisasi DataTables -->
     <script>

@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
     
-    <!-- TAMBAHAN: CSS untuk efek hover pada kartu -->
+    <!-- CSS untuk efek hover pada kartu -->
     <style>
         .custom-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -32,10 +32,10 @@
 
 <body>
 
-    <!-- Struktur Asli: Memanggil Navbar -->
+    <!-- Memanggil Navbar -->
     <?= $this->include('layouts/navbar'); ?>
 
-    <!-- MODIFIKASI: Banner About dibuat elegan dengan gradasi warna ungu-biru -->
+    <!-- Banner About -->
     <div class="p-5 mb-5 text-white shadow-sm text-center" style="background: linear-gradient(135deg, #0d6efd, #0dcaf0);">
       <div class="container py-5">
         <h1 class="display-4 fw-bold">About Me</h1>
@@ -44,35 +44,35 @@
     </div>
 
     <div class="container">
-        <!-- MODIFIKASI: Mengubah susunan baris agar tampil menyamping menjadi 3 kolom (col-md-4) -->
+        <!-- Mengubah susunan baris agar tampil menyamping menjadi 3 kolom (col-md-4) -->
         <div class="row text-center">
             
-            <!-- KARTU 1: Siapa Aku -->
+            <!-- KARTU 1: Siapa Aku ? -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm border-0 custom-card">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Siapa Aku ?</h5>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas.</p>
+                        <p class="card-text text-muted">Aku adalah mahasiswa Fakultas Teknik dan Ilmu Komputer, program studi Sistem Informasi semester 6 yg memiliki plan untuk lulus tepat waktu.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- KARTU 2: Bisa Apa Aku -->
+            <!-- KARTU 2: Bisa Apa Aku ? -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm border-0 custom-card">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Bisa Apa Aku ?</h5>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas.</p>
+                        <p class="card-text text-muted">Aku bisa membuat aplikasi web dengan menggunakan framework CodeIgniter dan teknologi frontend seperti Bootstrap.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- KARTU 3: Bagaimana Aku -->
+            <!-- KARTU 3: Bagaimana Aku ? -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm border-0 custom-card">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Bagaimana Aku ?</h5>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas.</p>
+                        <p class="card-text text-muted">Aku adalah orang yang suka belajar dan terus mengembangkan diri. Aku juga memiliki kemampuan berpikir kritis dan menyelesaikan masalah.</p>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
         </div>
     </div>
 
-    <!-- Struktur Asli: Footer -->
+    <!-- Footer -->
     <div class="container py-4">
         <footer class="pt-3 mt-4 text-muted border-top text-center">
             <div class="container">
@@ -89,7 +89,7 @@
         </footer>
     </div>
 
-    <!-- Struktur Asli: Jquery dan Bootsrap JS -->
+    <!-- Jquery dan Bootsrap JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 

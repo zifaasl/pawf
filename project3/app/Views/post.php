@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
 
-    <!-- TAMBAHAN: CSS untuk efek hover pada kartu dan merapikan link judul -->
+    <!-- CSS untuk efek hover pada kartu dan merapikan link judul -->
     <style>
         .custom-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -32,10 +32,10 @@
 
 <body>
 
-    <!-- Struktur Asli: Memanggil Navbar -->
+    <!-- Memanggil Navbar -->
     <?= $this->include('layouts/navbar'); ?>
 
-    <!-- MODIFIKASI: Banner Blog dengan tema biru cerah -->
+    <!-- Banner Blog -->
     <div class="p-5 mb-5 text-white shadow-sm text-center" style="background: linear-gradient(135deg, #0d6efd, #0dcaf0);">
       <div class="container py-5">
         <h1 class="display-4 fw-bold">Daftar Artikel</h1>
@@ -44,16 +44,16 @@
     </div>
 
     <div class="container">
-        <!-- MODIFIKASI: Mengubah susunan baris agar tampil menyamping menjadi 3 kolom -->
+        <!-- Mengubah susunan baris agar tampil menyamping menjadi 3 kolom -->
         <div class="row">
             
-            <!-- Struktur Asli: Looping data postingan dari Controller -->
+            <!-- Looping data postingan dari Controller -->
             <?php foreach ($posts as $post) : ?>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm border-0 custom-card">
                         <div class="card-body d-flex flex-column">
                             
-                            <!-- Judul Artikel (Bisa di-klik) -->
+                            <!-- Judul Artikel -->
                             <h5 class="h5 fw-bold post-title mb-3">
                                 <a href="/post/<?= $post['slug'] ?>"><?= $post['title'] ?></a>
                             </h5>
@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <!-- Struktur Asli: Footer -->
+    <!-- Footer -->
     <div class="container py-4">
         <footer class="pt-3 mt-4 text-muted border-top text-center">
             <div class="container">
@@ -86,7 +86,7 @@
         </footer>
     </div>
 
-    <!-- Struktur Asli: Jquery dan Bootsrap JS -->
+    <!-- Jquery dan Bootsrap JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 

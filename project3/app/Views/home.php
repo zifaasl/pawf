@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
     
-    <!-- TAMBAHAN: Sedikit CSS untuk efek animasi saat kartu disentuh kursor -->
+    <!-- Efek animasi saat kartu disentuh kursor -->
     <style>
         .custom-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -23,10 +23,10 @@
 
 <body>
 
-    <!-- Struktur Asli: Memanggil Navbar -->
+    <!-- Memanggil Navbar -->
     <?= $this->include('layouts/navbar'); ?>
 
-    <!-- MODIFIKASI: Banner (Hero Section) dibuat lebih berwarna dengan gradasi dan teks di tengah -->
+    <!-- Banner (Hero Section) dibuat lebih berwarna dengan gradasi dan teks di tengah -->
     <div class="p-5 mb-5 text-white shadow-sm" style="background: linear-gradient(135deg, #0d6efd, #0dcaf0);">
       <div class="container py-5 text-center">
         <h1 class="display-4 fw-bold">Selamat Datang di MyBlog</h1>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="container">
-        <!-- MODIFIKASI: Mengubah susunan baris agar tampil menyamping (Grid) -->
+        <!-- Mengubah susunan baris agar tampil menyamping (Grid) -->
         <div class="row">
             
             <!-- KARTU 1 -->
@@ -45,7 +45,7 @@
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Mulai ngoding PHP</h5>
                         <p class="text-muted small mb-3"><i class="fas fa-calendar-alt"></i> 10 Mei 2026</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum...</p>
+                        <p class="card-text">PHP adalah bahasa pemrograman server-side yang sangat populer untuk pengembangan web. Di artikel ini, kita akan membahas cara instalasi XAMPP, menulis sintaks dasar, dan membuat program 'Hello World' pertamamu.</p>
                     </div>
                     <!-- Tambahan tombol Read More di bagian bawah kartu -->
                     <div class="card-footer bg-white border-top-0 pt-0">
@@ -62,7 +62,7 @@
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Jadi paham CSS dan JS</h5>
                         <p class="text-muted small mb-3"><i class="fas fa-calendar-alt"></i> 12 Mei 2026</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum...</p>
+                        <p class="card-text">Setelah menguasai HTML dasar, langkah selanjutnya adalah mempercantik tampilan website dengan CSS dan membuatnya interaktif menggunakan JavaScript. Mari pelajari fungsi dan perbedaan mendasar dari kedua bahasa ini.</p>
                     </div>
                     <div class="card-footer bg-white border-top-0 pt-0">
                         <a href="#" class="btn btn-outline-primary btn-sm w-100">
@@ -76,9 +76,9 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm border-0 custom-card">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">Codeigniter asyik juga kok</h5>
+                        <h5 class="card-title fw-bold">Codeigniter asik juga kok</h5>
                         <p class="text-muted small mb-3"><i class="fas fa-calendar-alt"></i> 15 Mei 2026</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum...</p>
+                        <p class="card-text">CodeIgniter adalah framework PHP yang ringan dan mudah digunakan. Di artikel ini, kita akan membahas cara instalasi, struktur dasar, dan beberapa fitur menarik dari CodeIgniter.</p>
                     </div>
                     <div class="card-footer bg-white border-top-0 pt-0">
                         <a href="#" class="btn btn-outline-primary btn-sm w-100">
@@ -91,7 +91,7 @@
         </div>
     </div>
 
-    <!-- Struktur Asli: Footer -->
+    <!-- Footer -->
     <div class="container py-4">
         <footer class="pt-3 mt-4 text-muted border-top text-center">
             <div class="container">
@@ -100,13 +100,13 @@
         </footer>
     </div>
 
-    <!-- TAMBAHAN: Tombol Back to Top yang melayang di pojok kanan bawah -->
+    <!-- Tombol Back to Top yang melayang di pojok kanan bawah -->
     <a href="#" class="position-fixed bottom-0 end-0 m-4 bg-primary text-white rounded-circle shadow d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; text-decoration: none; z-index: 999;">
         <i class="fas fa-chevron-up"></i>
     </a>
 
-    <!-- Struktur Asli: Jquery dan Bootsrap JS -->
-    <!-- (Aku tambahkan fallback jQuery CDN buat jaga-jaga kalau file lokalmu tidak terbaca seperti di admin tadi) -->
+    <!-- Jquery dan Bootsrap JS -->
+    <!-- Menambahkan fallback jQuery CDN agar terbaca -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 

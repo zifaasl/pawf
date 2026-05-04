@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
     
-    <!-- TAMBAHAN: CSS untuk efek hover card (tanpa CSS icon) -->
+    <!-- CSS untuk efek hover card -->
     <style>
         .custom-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -23,10 +23,10 @@
 
 <body>
 
-    <!-- Struktur Asli: Memanggil Navbar -->
+    <!-- Memanggil Navbar -->
     <?= $this->include('layouts/navbar'); ?>
 
-    <!-- MODIFIKASI: Banner Contact dengan gradasi hijau-teal agar terlihat "fresh" dan ramah -->
+    <!-- Banner Contact -->
     <div class="p-5 mb-5 text-white shadow-sm text-center" style="background: linear-gradient(135deg, #0d6efd, #0dcaf0);">
       <div class="container py-5">
         <h1 class="display-4 fw-bold">Contact Us</h1>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="container">
-        <!-- MODIFIKASI: Mengubah baris agar tampil menyamping menjadi 3 kolom.
+        <!-- Mengubah baris agar tampil menyamping menjadi 3 kolom.
              Class 'text-center' memastikan semua teks di dalamnya rata tengah. -->
         <div class="row text-center">
             
@@ -74,7 +74,7 @@
         </div>
     </div>
 
-    <!-- Struktur Asli: Footer -->
+    <!-- Footer -->
     <div class="container py-4">
         <footer class="pt-3 mt-4 text-muted border-top text-center">
             <div class="container">
@@ -83,7 +83,7 @@
         </footer>
     </div>
 
-    <!-- Struktur Asli: Jquery dan Bootsrap JS -->
+    <!-- Jquery dan Bootsrap JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 
