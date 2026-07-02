@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if not ajax %}
+<section class="hero-panel">
+  <div class="hero-top">
+    <span class="eyebrow">BLOG ZIFA</span>
+    <div class="hero-pill">
+      <span>Django Blog Zifa</span>
+    </div>
+  </div>
+
+  <div class="hero-copy">
+    <h1>Random Teks? Here.</h1>
+    <p>Tulisan yang dibuat se-random mungkin.</p>
+  </div>
+
+  <div class="search-panel">
+    <div class="search-inner">
+      <div class="search-field">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Cari blog..."
+          value="{{ query }}"
+          autocomplete="off"
+        >
+        <button type="button" id="search-button">Cari</button>
+      </div>
+      <span id="search-status" class="search-status">
+        {% if query %}Menampilkan hasil untuk "{{ query }}"{% endif %}
+      </span>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="post-grid" id="post-list-results">
+  {% if posts %}
+  <div class="post-cards">
+    {% for post in posts %}
+    <article class="post-card">
+      <a class="post-card-link" href="{{ post.get_absolute_url }}">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body|truncatewords:32 }}</p>
+
+        <div class="post-card-footer">
+          <span>Oleh {{ post.author }}</span>
+          <span>{{ post.created_at|date:"d M Y" }}</span>
+          <span>{{ post.view_count }} views</span>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="no-results">Tidak ada artikel yang ditemukan{% if query %} untuk "{{ query }}"{% endif %}.</p>
+  {% endif %}
+
+  {% if posts.has_other_pages %}
+  <div class="pagination">
+    {% if posts.has_previous %}
+    <a href="?page={{ posts.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">&laquo; Sebelumnya</a>
+    {% endif %}
+    <span>Halaman {{ posts.number }} dari {{ posts.paginator.num_pages }}</span>
+    {% if posts.has_next %}
+    <a href="?page={{ posts.next_page_number }}{% if query %}&q={{ query }}{% endif %}">Berikutnya &raquo;</a>
+    {% endif %}
+  </div>
+  {% endif %}
+</section>
+
+<script>
+(function () {
+  const input = document.getElementById("search-input");
+  const button = document.getElementById("search-button");
+  const resultsBox = document.getElementById("post-list-results");
+  const status = document.getElementById("search-status");
+  let debounceTimer = null;
+  let currentRequest = null;
+
+  function runSearch(query) {
+    if (currentRequest) {
+      currentRequest.abort();
+    }
+    status.textContent = "Mencari...";
+
+    const controller = new AbortController();
+    currentRequest = controller;
+    const url = new URL(window.location.pathname, window.location.origin);
+
+    if (query) {
+      url.searchParams.set("q", query);
+    }
+
+    fetch(url.toString(), {
+      headers: { "X-Requested-With": "XMLHttpRequest" },
+      signal: controller.signal,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data.html, "text/html");
+        const section = doc.querySelector("#post-list-results");
+        resultsBox.innerHTML = section ? section.innerHTML : data.html;
+        status.textContent = query ? `${data.count} artikel ditemukan` : "";
+        const newUrl = query
+          ? `${window.location.pathname}?q=${encodeURIComponent(query)}`
+          : window.location.pathname;
+        window.history.replaceState({}, "", newUrl);
+      })
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          status.textContent = "Gagal memuat hasil pencarian.";
+        }
+      });
+  }
+
+  input.addEventListener("input", function () {
+    clearTimeout(debounceTimer);
+    const query = input.value.trim();
+    debounceTimer = setTimeout(() => runSearch(query), 300);
+  });
+
+  button.addEventListener("click", function () {
+    clearTimeout(debounceTimer);
+    runSearch(input.value.trim());
+  });
+})();
+</script>
+{% endblock content %}
